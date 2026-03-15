@@ -146,6 +146,14 @@
 }
 
 @media (max-width: 768px) {
+  .header-inner {
+    gap: var(--space-4);
+  }
+
+  .header-actions .btn {
+    display: none; /* Hide 'Explorer les rapports' on mobile */
+  }
+
   .header-nav {
     position: fixed;
     top: 0;
@@ -154,6 +162,7 @@
     bottom: 0;
     background: rgba(255, 255, 255, 0.98);
     backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
     flex-direction: column;
     justify-content: center;
     gap: var(--space-4);
@@ -176,6 +185,12 @@
   .mobile-menu-btn {
     display: flex;
     z-index: var(--z-modal);
+  }
+}
+
+@media (max-width: 480px) {
+  .header-logo span {
+    display: none; /* Only show the 'M' icon on very small screens to save space */
   }
 }
 
