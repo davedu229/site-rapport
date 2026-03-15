@@ -277,7 +277,7 @@ app.get('/admin', (req, res) => {
 
 // ========== START ==========
 app.listen(PORT, () => {
-  console.log(`\n  🔵 Meridian Research — Serveur démarré`);
+  console.log(`\n  🔵 MarketEdge — Serveur démarré`);
   console.log(`  📍 Site:  http://localhost:${PORT}`);
   console.log(`  🔧 Admin: http://localhost:${PORT}/admin`);
   console.log(`  📊 API:   http://localhost:${PORT}/api/reports\n`);

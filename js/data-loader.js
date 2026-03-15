@@ -100,7 +100,7 @@
     const isFr = lang === 'fr';
 
     // Update page title
-    document.title = `${isFr ? r.title : (r.titleEn || r.title)} — Meridian Research`;
+    document.title = `${isFr ? r.title : (r.titleEn || r.title)} — MarketEdge`;
 
     // Update hero
     const heroH1 = document.querySelector('.page-hero h1');
