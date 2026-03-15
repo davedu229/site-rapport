@@ -131,6 +131,7 @@ function renderReportsList(reports) {
             <span>${r.pages || '—'} pages</span>
             <span>${r.dateLabel || r.date || '—'}</span>
             <span>${r.price ? r.price + '€ HT' : '—'}</span>
+            ${r.fileUrl ? '<span class="report-row__badge" style="background:var(--primary);color:#fff;border-color:var(--primary)">PDF 📄</span>' : ''}
             ${r.isNew ? '<span class="report-row__badge">Nouveau</span>' : ''}
           </div>
         </div>
@@ -158,6 +159,8 @@ function showReportForm(report = null) {
   document.getElementById('rf-date').value = report ? report.date : '';
   document.getElementById('rf-dateLabel').value = report ? (report.dateLabel || '') : '';
   document.getElementById('rf-dateLabelEn').value = report ? (report.dateLabelEn || '') : '';
+  document.getElementById('rf-file').value = '';
+  document.getElementById('rf-file-current').textContent = report && report.fileUrl ? `Fichier actuel : ${report.fileUrl.split('/').pop()}` : '';
   document.getElementById('rf-pages').value = report ? (report.pages || '') : '';
   document.getElementById('rf-format').value = report ? (report.format || 'PDF + Excel') : 'PDF + Excel';
   document.getElementById('rf-sources').value = report ? (report.sources || '') : '';
@@ -237,19 +240,33 @@ async function handleSaveReport(e) {
   const sectorEnMap = { energy: 'Energy & Mobility', cyber: 'Cybersecurity', industry: 'Industry & Supply Chain', health: 'Health & Regulated Consumer' };
   report.sectorLabelEn = sectorEnMap[report.sector] || report.sectorLabel;
 
+  const formData = new FormData();
+  Object.keys(report).forEach(key => {
+    if (Array.isArray(report[key])) {
+      formData.append(key, JSON.stringify(report[key]));
+    } else if (typeof report[key] === 'boolean') {
+      formData.append(key, report[key] ? 'true' : 'false');
+    } else {
+      formData.append(key, report[key] === null || report[key] === undefined ? '' : report[key]);
+    }
+  });
+
+  const fileInput = document.getElementById('rf-file');
+  if (fileInput.files.length > 0) {
+    formData.append('file', fileInput.files[0]);
+  }
+
   try {
     let res;
     if (editingReportId) {
       res = await fetch(`${API}/api/reports/${editingReportId}`, {
         method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(report)
+        body: formData
       });
     } else {
       res = await fetch(`${API}/api/reports`, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(report)
+        body: formData
       });
     }
 

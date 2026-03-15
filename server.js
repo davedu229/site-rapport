@@ -4,6 +4,7 @@ const bcrypt = require('bcryptjs');
 const fs = require('fs');
 const path = require('path');
 const { v4: uuidv4 } = require('uuid');
+const multer = require('multer');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -29,6 +30,26 @@ app.use('/admin', express.static(path.join(__dirname, 'admin')));
 
 // ========== Data Helpers ==========
 const DATA_DIR = path.join(__dirname, 'data');
+const UPLOADS_DIR = path.join(DATA_DIR, 'uploads');
+if (!fs.existsSync(UPLOADS_DIR)) {
+  fs.mkdirSync(UPLOADS_DIR, { recursive: true });
+}
+
+// Serve uploaded files
+app.use('/uploads', express.static(UPLOADS_DIR));
+
+// Configure multer
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, UPLOADS_DIR);
+  },
+  filename: function (req, file, cb) {
+    const ext = path.extname(file.originalname);
+    const basename = path.basename(file.originalname, ext).replace(/[^a-zA-Z0-9-]/g, '-');
+    cb(null, `${basename.substring(0, 30)}-${Date.now()}${ext}`);
+  }
+});
+const upload = multer({ storage: storage });
 
 function readJSON(filename) {
   const filepath = path.join(DATA_DIR, filename);
@@ -121,9 +142,30 @@ app.get('/api/reports/:id', (req, res) => {
   res.json(report);
 });
 
-app.post('/api/reports', requireAuth, (req, res) => {
+app.post('/api/reports', requireAuth, upload.single('file'), (req, res) => {
   const reports = readJSON('reports.json') || [];
-  const newReport = req.body;
+  let newReport = { ...req.body };
+
+  // Parse stringified fields from FormData
+  ['pages', 'price', 'sources'].forEach(field => {
+    if (newReport[field]) newReport[field] = parseInt(newReport[field], 10);
+  });
+  if (newReport.isNew === 'true') newReport.isNew = true;
+  if (newReport.isNew === 'false') newReport.isNew = false;
+  if (typeof newReport.toc === 'string') {
+    try { newReport.toc = JSON.parse(newReport.toc) } catch(e){}
+  }
+  if (typeof newReport.tocEn === 'string') {
+    try { newReport.tocEn = JSON.parse(newReport.tocEn) } catch(e){}
+  }
+  if (typeof newReport.keyFigures === 'string') {
+    try { newReport.keyFigures = JSON.parse(newReport.keyFigures) } catch(e){}
+  }
+
+  // Handle uploaded file
+  if (req.file) {
+    newReport.fileUrl = `/uploads/${req.file.filename}`;
+  }
 
   // Generate ID from title if not provided
   if (!newReport.id) {
@@ -145,12 +187,41 @@ app.post('/api/reports', requireAuth, (req, res) => {
   res.status(201).json(newReport);
 });
 
-app.put('/api/reports/:id', requireAuth, (req, res) => {
+app.put('/api/reports/:id', requireAuth, upload.single('file'), (req, res) => {
   const reports = readJSON('reports.json') || [];
   const index = reports.findIndex(r => r.id === req.params.id);
   if (index === -1) return res.status(404).json({ error: 'Rapport non trouvé' });
 
-  reports[index] = { ...reports[index], ...req.body, id: req.params.id };
+  let updatedData = { ...req.body };
+
+  // Parse stringified fields from FormData
+  ['pages', 'price', 'sources'].forEach(field => {
+    if (updatedData[field]) updatedData[field] = parseInt(updatedData[field], 10);
+  });
+  if (updatedData.isNew === 'true') updatedData.isNew = true;
+  if (updatedData.isNew === 'false') updatedData.isNew = false;
+  if (typeof updatedData.toc === 'string') {
+    try { updatedData.toc = JSON.parse(updatedData.toc) } catch(e){}
+  }
+  if (typeof updatedData.tocEn === 'string') {
+    try { updatedData.tocEn = JSON.parse(updatedData.tocEn) } catch(e){}
+  }
+  if (typeof updatedData.keyFigures === 'string') {
+    try { updatedData.keyFigures = JSON.parse(updatedData.keyFigures) } catch(e){}
+  }
+
+  // Handle uploaded file
+  if (req.file) {
+    // Delete old file if it exists
+    if (reports[index].fileUrl) {
+      const oldFilename = reports[index].fileUrl.replace('/uploads/', '');
+      const oldPath = path.join(UPLOADS_DIR, oldFilename);
+      if (fs.existsSync(oldPath)) fs.unlinkSync(oldPath);
+    }
+    updatedData.fileUrl = `/uploads/${req.file.filename}`;
+  }
+
+  reports[index] = { ...reports[index], ...updatedData, id: req.params.id };
   writeJSON('reports.json', reports);
   res.json(reports[index]);
 });
@@ -162,6 +233,14 @@ app.delete('/api/reports/:id', requireAuth, (req, res) => {
 
   const deleted = reports.splice(index, 1)[0];
   writeJSON('reports.json', reports);
+
+  // Delete associated file
+  if (deleted.fileUrl) {
+    const filename = deleted.fileUrl.replace('/uploads/', '');
+    const filepath = path.join(UPLOADS_DIR, filename);
+    if (fs.existsSync(filepath)) fs.unlinkSync(filepath);
+  }
+
   res.json({ success: true, deleted: deleted.id });
 });
 
