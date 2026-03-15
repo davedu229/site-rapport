@@ -283,6 +283,36 @@
     } catch (e) { /* static fallback */ }
   }
 
+  // ========== CHECKOUT ==========
+  async function loadCheckout() {
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get('id');
+    if (!id) return;
+
+    const res = await fetch(`${API_BASE}/api/reports/${id}`);
+    if (!res.ok) return;
+    const r = await res.json();
+
+    const lang = localStorage.getItem('meridian-lang') || 'fr';
+    const isFr = lang === 'fr';
+
+    const titleEl = document.getElementById('checkout-report-title');
+    if (titleEl) titleEl.textContent = isFr ? r.title : (r.titleEn || r.title);
+
+    const priceEl = document.getElementById('checkout-report-price');
+    if (priceEl && r.price) priceEl.textContent = formatPrice(r.price);
+
+    const totalEl = document.getElementById('checkout-report-total');
+    if (totalEl && r.price) {
+      const tva = r.price * 0.20;
+      const total = r.price + tva;
+      totalEl.textContent = formatPrice(total);
+
+      const tvaEl = document.getElementById('checkout-report-tva');
+      if (tvaEl) tvaEl.textContent = formatPrice(tva);
+    }
+  }
+
   // ========== UTILS ==========
   function formatPrice(price) {
     return new Intl.NumberFormat('fr-FR').format(price) + '€';
