@@ -195,7 +195,7 @@
 
           <div class="form-group">
             <label class="form-label" data-i18n="request.message">Commentaire additionnel (optionnel)</label>
-            <textarea class="form-textarea" rows="3" placeholder=""></textarea>
+            <textarea id="form-message" class="form-textarea" rows="3" placeholder=""></textarea>
           </div>
 
           <div class="form-nav">
@@ -206,7 +206,9 @@
 
         <!-- Success State -->
         <div class="form-success" style="display: none; padding: var(--space-16) var(--space-8); text-align: center;">
-          <div style="font-size: 4rem; margin-bottom: var(--space-6);">✅</div>
+          <div style="color: var(--color-success); margin-bottom: var(--space-6);">
+            <svg class="icon icon-xl" viewBox="0 0 24 24" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
+          </div>
           <h2 data-i18n="request.success.title" style="margin-bottom: var(--space-4);">Demande envoyée !</h2>
           <p style="font-size: var(--fs-lg); max-width: 500px; margin: 0 auto var(--space-8);" data-i18n="request.success.message">Nous avons bien reçu votre demande. Un analyste vous recontactera sous 24h avec une proposition détaillée.</p>
           <a href="index.html" class="btn btn--primary btn--lg" data-i18n="nav.home">Retour à l'accueil</a>

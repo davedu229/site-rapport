@@ -93,6 +93,18 @@ function initMultiStepForm(form) {
 
   // Initialize first step
   showStep(0);
+
+  // Pre-fill subject from URL
+  const params = new URLSearchParams(window.location.search);
+  const sujet = params.get('sujet');
+  if (sujet) {
+    const msgInput = form.querySelector('#form-message');
+    if (msgInput) {
+      msgInput.value = sujet;
+      // Optionnel: sauter à la dernière étape ?
+      // showStep(steps.length - 1);
+    }
+  }
 }
 
 /**

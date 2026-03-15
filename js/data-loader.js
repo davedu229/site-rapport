@@ -20,6 +20,7 @@
     if (file === 'rapport.html') return 'report';
     if (file === 'tarifs.html') return 'pricing';
     if (file === 'contact.html') return 'contact';
+    if (file === 'paiement.html') return 'checkout';
     if (file === 'index.html' || file === '') return 'home';
     return null;
   }
@@ -30,6 +31,7 @@
       else if (page === 'report') await loadReportDetail();
       else if (page === 'pricing') await loadPricing();
       else if (page === 'contact') await loadContact();
+      else if (page === 'checkout') await loadCheckout();
       else if (page === 'home') await loadHome();
     } catch (err) {
       console.warn('[data-loader] API unavailable, using static content.', err.message);
@@ -56,9 +58,9 @@
       const sectorLabel = isFr ? (r.sectorLabel || r.sector) : (r.sectorLabelEn || r.sectorLabel || r.sector);
 
       return `
-        <a href="rapport.html?id=${r.id}" class="report-card" data-sector="${r.sector}" data-date="${r.date}" data-price="${r.price || 0}">
+        <div class="report-card" onclick="window.location.href='rapport.html?id=${r.id}'" style="cursor:pointer;" data-sector="${r.sector}" data-date="${r.date}" data-price="${r.price || 0}">
           <div class="report-card__header">
-            <span class="report-card__sector">${r.sectorIcon || '📄'} ${sectorLabel}</span>
+            <span class="report-card__sector">${r.sectorIcon || '<svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>'} ${sectorLabel}</span>
             ${r.isNew ? '<span class="badge badge--new">Nouveau</span>' : ''}
           </div>
           <div class="report-card__body">
@@ -66,17 +68,21 @@
             <p class="report-card__excerpt">${escapeHtml(excerpt)}</p>
           </div>
           <div class="report-card__meta">
-            <span class="report-card__meta-item">📄 ${r.pages || '—'} pages</span>
-            <span class="report-card__meta-item">📅 ${dateLabel}</span>
+            <span class="report-card__meta-item"><svg class="icon icon-sm text-accent" viewBox="0 0 24 24" style="margin-right: 4px"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg> ${r.pages || '—'} pages</span>
+            <span class="report-card__meta-item"><svg class="icon icon-sm text-accent" viewBox="0 0 24 24" style="margin-right: 4px"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> ${dateLabel}</span>
           </div>
           <div class="report-card__footer">
             <div>
               <span class="report-card__price">${r.price ? formatPrice(r.price) : '—'}</span>
               <span class="report-card__price-label"> HT</span>
             </div>
-            <span class="btn btn--outline btn--sm">${isFr ? 'Aperçu gratuit' : 'Free preview'}</span>
+            ${r.fileUrl ? 
+              `<a href="${r.fileUrl}" target="_blank" class="btn btn--outline btn--sm" onclick="event.stopPropagation()">${isFr ? 'Aperçu PDF' : 'PDF Preview'}</a>` 
+              : 
+              `<span class="btn btn--outline btn--sm">${isFr ? 'Détails' : 'Details'}</span>`
+            }
           </div>
-        </a>`;
+        </div>`;
     }).join('');
 
     // Update count
@@ -113,7 +119,7 @@
     const sectorBadge = document.querySelector('.page-hero .badge--accent');
     if (sectorBadge) {
       const sectorLabel = isFr ? (r.sectorLabel || r.sector) : (r.sectorLabelEn || r.sectorLabel);
-      sectorBadge.textContent = `${r.sectorIcon || '📄'} ${sectorLabel}`;
+      sectorBadge.innerHTML = `${r.sectorIcon || '<svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>'} ${sectorLabel}`;
     }
 
     // Update metadata
@@ -153,9 +159,26 @@
       }
     }
 
-    // Update price in sidebar
+    // Update price and buttons in sidebar
     const priceEl = document.querySelector('.report-buy-card__price');
     if (priceEl && r.price) priceEl.textContent = formatPrice(r.price);
+
+    const buyBtn = document.querySelector('.report-buy-card .btn--primary');
+    if (buyBtn) {
+      buyBtn.href = `paiement.html?id=${r.id}`;
+    }
+
+    const previewBtn = document.querySelector('.report-buy-card .btn--secondary');
+    if (previewBtn) {
+      if (r.fileUrl) {
+        previewBtn.href = r.fileUrl;
+        previewBtn.target = '_blank';
+        previewBtn.textContent = isFr ? 'Aperçu PDF' : 'PDF Preview';
+        previewBtn.style.display = 'inline-flex';
+      } else {
+        previewBtn.style.display = 'none';
+      }
+    }
   }
 
   function updateMeta(selector, r, isFr) {
