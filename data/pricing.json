@@ -1,0 +1,84 @@
+{
+  "unit": {
+    "name": "Rapport individuel",
+    "nameEn": "Individual Report",
+    "desc": "Accès immédiat à un rapport de marché complet",
+    "descEn": "Immediate access to a complete market report",
+    "fromLabel": "À partir de",
+    "fromLabelEn": "Starting at",
+    "price": 490,
+    "period": "/ rapport",
+    "periodEn": "/ report",
+    "features": [
+      "Rapport complet PDF + données Excel",
+      "Résumé exécutif actionnable",
+      "Méthodologie et sources détaillées",
+      "Mise à jour incluse pendant 12 mois",
+      "Support analyste par email"
+    ],
+    "featuresEn": [
+      "Full PDF report + Excel data",
+      "Actionable executive summary",
+      "Detailed methodology and sources",
+      "12-month update included",
+      "Analyst support by email"
+    ],
+    "ctaLabel": "Explorer les rapports",
+    "ctaLabelEn": "Explore reports",
+    "ctaLink": "catalogue.html"
+  },
+  "bundle": {
+    "name": "Bundle sectoriel",
+    "nameEn": "Sector Bundle",
+    "desc": "Pack de rapports sur un même secteur avec remise",
+    "descEn": "Bundle of reports on the same sector with discount",
+    "fromLabel": "À partir de",
+    "fromLabelEn": "Starting at",
+    "price": 1190,
+    "period": "/ bundle",
+    "periodEn": "/ bundle",
+    "featured": true,
+    "features": [
+      "3 à 5 rapports d'un même secteur",
+      "Remise de 25% sur le prix unitaire",
+      "Note de synthèse sectorielle offerte",
+      "Données consolidées et comparatives",
+      "Support analyste prioritaire"
+    ],
+    "featuresEn": [
+      "3 to 5 reports from the same sector",
+      "25% discount on unit price",
+      "Free sector overview note",
+      "Consolidated and comparative data",
+      "Priority analyst support"
+    ],
+    "ctaLabel": "Nous contacter",
+    "ctaLabelEn": "Contact us",
+    "ctaLink": "contact.html"
+  },
+  "custom": {
+    "name": "Sur mesure",
+    "nameEn": "Custom",
+    "desc": "Rapport personnalisé selon votre problématique",
+    "descEn": "Custom report tailored to your challenge",
+    "priceLabel": "Sur devis",
+    "priceLabelEn": "On quote",
+    "features": [
+      "Périmètre défini avec vous",
+      "Entretiens d'experts inclus",
+      "Présentation orale des résultats",
+      "Mises à jour trimestrielles (option)",
+      "Licence multi-utilisateurs disponible"
+    ],
+    "featuresEn": [
+      "Scope defined with you",
+      "Expert interviews included",
+      "Oral results presentation",
+      "Quarterly updates (option)",
+      "Multi-user license available"
+    ],
+    "ctaLabel": "Rapport sur mesure",
+    "ctaLabelEn": "Custom report",
+    "ctaLink": "demande.html"
+  }
+}

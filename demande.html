@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demande de rapport sur mesure — Meridian Research</title>
+  <meta name="description" content="Décrivez votre problématique marché et recevez un rapport de recherche conçu spécifiquement pour votre décision. Proposition sous 24h.">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+  <!-- ========== HEADER ========== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="header-logo"><div class="logo-icon">M</div><span>Meridian Research</span></a>
+      <nav class="header-nav" id="main-nav">
+        <a href="index.html" class="nav-link" data-i18n="nav.home">Accueil</a>
+        <a href="catalogue.html" class="nav-link" data-i18n="nav.catalogue">Rapports</a>
+        <a href="tarifs.html" class="nav-link" data-i18n="nav.pricing">Tarifs</a>
+        <a href="methodologie.html" class="nav-link" data-i18n="nav.methodology">Méthodologie</a>
+        <a href="demande.html" class="nav-link active" data-i18n="nav.request">Rapport sur mesure</a>
+        <a href="contact.html" class="nav-link" data-i18n="nav.contact">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <div class="lang-toggle">
+          <button class="lang-btn active" data-lang="fr">FR</button>
+          <button class="lang-btn" data-lang="en">EN</button>
+        </div>
+      </div>
+      <button class="mobile-menu-btn" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <!-- ========== PAGE HERO ========== -->
+  <section class="page-hero page-hero--center">
+    <div class="hero-grid-bg"></div>
+    <div class="container">
+      <span class="badge badge--accent" data-i18n="nav.request">Rapport sur mesure</span>
+      <h1 data-i18n="request.title">Demande de rapport sur mesure</h1>
+      <p data-i18n="request.subtitle">Décrivez votre problématique marché et recevez un rapport conçu spécifiquement pour votre décision.</p>
+    </div>
+  </section>
+
+  <!-- ========== MULTI-STEP FORM ========== -->
+  <section class="section section--sm">
+    <div class="container">
+      <form class="request-form-layout card" id="request-form">
+        <!-- Progress -->
+        <div class="step-progress" style="padding: 0 var(--space-6); margin-top: var(--space-6);">
+          <div class="step-dot active"></div>
+          <div class="step-line"></div>
+          <div class="step-dot"></div>
+          <div class="step-line"></div>
+          <div class="step-dot"></div>
+          <div class="step-line"></div>
+          <div class="step-dot"></div>
+        </div>
+
+        <!-- Step 1: Market Target -->
+        <div class="form-step is-active" style="padding: var(--space-6);">
+          <div class="form-step__header">
+            <h3 class="form-step__title" data-i18n="request.step1.title">Votre marché cible</h3>
+            <p class="form-step__subtitle" data-i18n="request.step1.subtitle">Quel marché souhaitez-vous analyser ?</p>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label form-label--required" data-i18n="request.sector">Secteur d'activité</label>
+            <input type="text" class="form-input" required data-i18n="request.sector.placeholder" data-i18n-attr="placeholder" placeholder="Ex: Cybersécurité, Énergie renouvelable...">
+            <span class="form-error" data-i18n="form.required">Ce champ est requis</span>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label form-label--required" data-i18n="request.market">Marché ou segment précis</label>
+            <input type="text" class="form-input" required data-i18n="request.market.placeholder" data-i18n-attr="placeholder" placeholder="Ex: Solutions de détection d'intrusion pour PME">
+            <span class="form-error" data-i18n="form.required">Ce champ est requis</span>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" data-i18n="request.geo">Périmètre géographique</label>
+            <input type="text" class="form-input" data-i18n="request.geo.placeholder" data-i18n-attr="placeholder" placeholder="Ex: France, UE, Monde">
+          </div>
+
+          <div class="form-nav">
+            <div></div>
+            <button type="button" class="btn btn--primary" data-action="next" data-i18n="cta.next">Suivant</button>
+          </div>
+        </div>
+
+        <!-- Step 2: Needs -->
+        <div class="form-step" style="padding: var(--space-6);">
+          <div class="form-step__header">
+            <h3 class="form-step__title" data-i18n="request.step2.title">Vos besoins</h3>
+            <p class="form-step__subtitle" data-i18n="request.step2.subtitle">Quelles questions voulez-vous résoudre ?</p>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label form-label--required" data-i18n="request.questions">Questions clés attendues</label>
+            <textarea class="form-textarea" required data-i18n="request.questions.placeholder" data-i18n-attr="placeholder" placeholder="Ex: Quelle est la taille du marché ? Qui sont les acteurs clés ? Quelles tendances à 3 ans ?"></textarea>
+            <span class="form-error" data-i18n="form.required">Ce champ est requis</span>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" data-i18n="request.usage">Usage du rapport</label>
+            <select class="form-select">
+              <option value="" disabled selected>—</option>
+              <option value="investment" data-i18n="request.usage.option1">Décision d'investissement / CAPEX</option>
+              <option value="launch" data-i18n="request.usage.option2">Lancement de produit / service</option>
+              <option value="competitive" data-i18n="request.usage.option3">Stratégie concurrentielle</option>
+              <option value="monitoring" data-i18n="request.usage.option4">Veille sectorielle</option>
+              <option value="other" data-i18n="request.usage.option5">Autre</option>
+            </select>
+          </div>
+
+          <div class="form-nav">
+            <button type="button" class="btn btn--secondary" data-action="prev" data-i18n="cta.prev">Précédent</button>
+            <button type="button" class="btn btn--primary" data-action="next" data-i18n="cta.next">Suivant</button>
+          </div>
+        </div>
+
+        <!-- Step 3: Budget & Timeline -->
+        <div class="form-step" style="padding: var(--space-6);">
+          <div class="form-step__header">
+            <h3 class="form-step__title" data-i18n="request.step3.title">Budget & délai</h3>
+            <p class="form-step__subtitle" data-i18n="request.step3.subtitle">Pour calibrer notre proposition.</p>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" data-i18n="request.budget">Budget indicatif</label>
+              <select class="form-select">
+                <option value="" disabled selected>—</option>
+                <option value="lt1k" data-i18n="request.budget.option1">< 1 000 €</option>
+                <option value="1k-3k" data-i18n="request.budget.option2">1 000 – 3 000 €</option>
+                <option value="3k-10k" data-i18n="request.budget.option3">3 000 – 10 000 €</option>
+                <option value="gt10k" data-i18n="request.budget.option4">> 10 000 €</option>
+                <option value="discuss" data-i18n="request.budget.option5">À discuter</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" data-i18n="request.timeline">Délai souhaité</label>
+              <select class="form-select">
+                <option value="" disabled selected>—</option>
+                <option value="lt2w" data-i18n="request.timeline.option1">< 2 semaines</option>
+                <option value="2-4w" data-i18n="request.timeline.option2">2 – 4 semaines</option>
+                <option value="1-2m" data-i18n="request.timeline.option3">1 – 2 mois</option>
+                <option value="flexible" data-i18n="request.timeline.option4">Pas de contrainte</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-nav">
+            <button type="button" class="btn btn--secondary" data-action="prev" data-i18n="cta.prev">Précédent</button>
+            <button type="button" class="btn btn--primary" data-action="next" data-i18n="cta.next">Suivant</button>
+          </div>
+        </div>
+
+        <!-- Step 4: Contact Info -->
+        <div class="form-step" style="padding: var(--space-6);">
+          <div class="form-step__header">
+            <h3 class="form-step__title" data-i18n="request.step4.title">Vos coordonnées</h3>
+            <p class="form-step__subtitle" data-i18n="request.step4.subtitle">Pour vous recontacter avec notre proposition.</p>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label form-label--required" data-i18n="request.name">Nom complet</label>
+              <input type="text" class="form-input" required placeholder="Jean Dupont">
+              <span class="form-error" data-i18n="form.required">Ce champ est requis</span>
+            </div>
+            <div class="form-group">
+              <label class="form-label form-label--required" data-i18n="request.company">Entreprise</label>
+              <input type="text" class="form-input" required placeholder="Société SAS">
+              <span class="form-error" data-i18n="form.required">Ce champ est requis</span>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label form-label--required" data-i18n="request.position">Fonction</label>
+              <input type="text" class="form-input" required placeholder="Directeur stratégie">
+              <span class="form-error" data-i18n="form.required">Ce champ est requis</span>
+            </div>
+            <div class="form-group">
+              <label class="form-label form-label--required" data-i18n="request.email">Email professionnel</label>
+              <input type="email" class="form-input" required placeholder="jean@societe.com">
+              <span class="form-error" data-i18n="form.email.invalid">Email invalide</span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" data-i18n="request.phone">Téléphone (optionnel)</label>
+            <input type="tel" class="form-input" placeholder="+33 6 00 00 00 00">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" data-i18n="request.message">Commentaire additionnel (optionnel)</label>
+            <textarea class="form-textarea" rows="3" placeholder=""></textarea>
+          </div>
+
+          <div class="form-nav">
+            <button type="button" class="btn btn--secondary" data-action="prev" data-i18n="cta.prev">Précédent</button>
+            <button type="submit" class="btn btn--primary btn--lg" data-i18n="cta.submit">Envoyer ma demande</button>
+          </div>
+        </div>
+
+        <!-- Success State -->
+        <div class="form-success" style="display: none; padding: var(--space-16) var(--space-8); text-align: center;">
+          <div style="font-size: 4rem; margin-bottom: var(--space-6);">✅</div>
+          <h2 data-i18n="request.success.title" style="margin-bottom: var(--space-4);">Demande envoyée !</h2>
+          <p style="font-size: var(--fs-lg); max-width: 500px; margin: 0 auto var(--space-8);" data-i18n="request.success.message">Nous avons bien reçu votre demande. Un analyste vous recontactera sous 24h avec une proposition détaillée.</p>
+          <a href="index.html" class="btn btn--primary btn--lg" data-i18n="nav.home">Retour à l'accueil</a>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="header-logo"><div class="logo-icon">M</div><span>Meridian Research</span></a>
+          <p data-i18n="footer.brand.desc">Intelligence de marché actionnable pour les décideurs.</p>
+        </div>
+        <div>
+          <h5 class="footer-heading" data-i18n="footer.nav">Navigation</h5>
+          <div class="footer-links">
+            <a href="index.html" data-i18n="nav.home">Accueil</a>
+            <a href="catalogue.html" data-i18n="nav.catalogue">Rapports</a>
+            <a href="tarifs.html" data-i18n="nav.pricing">Tarifs</a>
+          </div>
+        </div>
+        <div>
+          <h5 class="footer-heading" data-i18n="footer.resources">Ressources</h5>
+          <div class="footer-links">
+            <a href="demande.html" data-i18n="nav.request">Rapport sur mesure</a>
+            <a href="contact.html" data-i18n="nav.contact">Contact</a>
+          </div>
+        </div>
+        <div>
+          <h5 class="footer-heading" data-i18n="footer.legal.title">Juridique</h5>
+          <div class="footer-links">
+            <a href="mentions-legales.html" data-i18n="footer.legal">Mentions légales</a>
+            <a href="cgv.html" data-i18n="footer.cgv">CGV</a>
+            <a href="confidentialite.html" data-i18n="footer.privacy">Confidentialité</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Meridian Research. <span data-i18n="footer.rights">Tous droits réservés.</span></span>
+        <div class="footer-legal-links">
+          <a href="mentions-legales.html" data-i18n="footer.legal">Mentions légales</a>
+          <a href="cgv.html" data-i18n="footer.cgv">CGV</a>
+          <a href="confidentialite.html" data-i18n="footer.privacy">Confidentialité</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/forms.js"></script>
+</body>
+</html>

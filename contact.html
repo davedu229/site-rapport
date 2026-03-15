@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Meridian Research</title>
+  <meta name="description" content="Contactez Meridian Research. Notre équipe vous répond sous 24h pour toute question sur nos rapports de marché.">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+  <!-- ========== HEADER ========== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="header-logo"><div class="logo-icon">M</div><span>Meridian Research</span></a>
+      <nav class="header-nav" id="main-nav">
+        <a href="index.html" class="nav-link" data-i18n="nav.home">Accueil</a>
+        <a href="catalogue.html" class="nav-link" data-i18n="nav.catalogue">Rapports</a>
+        <a href="tarifs.html" class="nav-link" data-i18n="nav.pricing">Tarifs</a>
+        <a href="methodologie.html" class="nav-link" data-i18n="nav.methodology">Méthodologie</a>
+        <a href="demande.html" class="nav-link" data-i18n="nav.request">Rapport sur mesure</a>
+        <a href="contact.html" class="nav-link active" data-i18n="nav.contact">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <div class="lang-toggle"><button class="lang-btn active" data-lang="fr">FR</button><button class="lang-btn" data-lang="en">EN</button></div>
+      </div>
+      <button class="mobile-menu-btn" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <!-- ========== PAGE HERO ========== -->
+  <section class="page-hero page-hero--center">
+    <div class="hero-grid-bg"></div>
+    <div class="container">
+      <span class="badge badge--accent" data-i18n="nav.contact">Contact</span>
+      <h1 data-i18n="contact.title">Contactez-nous</h1>
+      <p data-i18n="contact.subtitle">Une question, un besoin spécifique ? Notre équipe vous répond sous 24h.</p>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT ========== -->
+  <section class="section section--sm">
+    <div class="container">
+      <div class="contact-layout">
+        <!-- Info Column -->
+        <div>
+          <div class="card contact-info-card animate-on-scroll delay-1">
+            <div class="contact-info-card__icon">✉️</div>
+            <div>
+              <div class="contact-info-card__title" data-i18n="contact.email.label">Email</div>
+              <p class="contact-info-card__value">contact@meridian-research.com</p>
+            </div>
+          </div>
+          <div class="card contact-info-card animate-on-scroll delay-2">
+            <div class="contact-info-card__icon">📞</div>
+            <div>
+              <div class="contact-info-card__title" data-i18n="contact.phone.label">Téléphone</div>
+              <p class="contact-info-card__value">+33 1 XX XX XX XX</p>
+            </div>
+          </div>
+          <div class="card contact-info-card animate-on-scroll delay-3">
+            <div class="contact-info-card__icon">📍</div>
+            <div>
+              <div class="contact-info-card__title" data-i18n="contact.address.label">Adresse</div>
+              <p class="contact-info-card__value">Paris, France</p>
+            </div>
+          </div>
+          <div class="card contact-info-card animate-on-scroll delay-4">
+            <div class="contact-info-card__icon">🕐</div>
+            <div>
+              <div class="contact-info-card__title" data-i18n="contact.hours.label">Horaires</div>
+              <p class="contact-info-card__value" data-i18n="contact.hours.value">Lun – Ven, 9h – 18h (CET)</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Form Column -->
+        <div class="card animate-on-scroll" style="padding: var(--space-8);">
+          <form id="contact-form">
+            <div class="form-group">
+              <label class="form-label form-label--required" data-i18n="contact.form.name">Nom complet</label>
+              <input type="text" class="form-input" required placeholder="Jean Dupont">
+              <span class="form-error" data-i18n="form.required">Ce champ est requis</span>
+            </div>
+            <div class="form-group">
+              <label class="form-label form-label--required" data-i18n="contact.form.email">Email</label>
+              <input type="email" class="form-input" required placeholder="jean@societe.com">
+              <span class="form-error" data-i18n="form.email.invalid">Email invalide</span>
+            </div>
+            <div class="form-group">
+              <label class="form-label" data-i18n="contact.form.subject">Sujet</label>
+              <input type="text" class="form-input" placeholder="">
+            </div>
+            <div class="form-group">
+              <label class="form-label form-label--required" data-i18n="contact.form.message">Votre message</label>
+              <textarea class="form-textarea" required rows="5" placeholder=""></textarea>
+              <span class="form-error" data-i18n="form.required">Ce champ est requis</span>
+            </div>
+            <button type="submit" class="btn btn--primary btn--lg" style="width: 100%;" data-i18n="contact.form.send">Envoyer le message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="header-logo"><div class="logo-icon">M</div><span>Meridian Research</span></a>
+          <p data-i18n="footer.brand.desc">Intelligence de marché actionnable pour les décideurs.</p>
+        </div>
+        <div><h5 class="footer-heading" data-i18n="footer.nav">Navigation</h5><div class="footer-links"><a href="index.html" data-i18n="nav.home">Accueil</a><a href="catalogue.html" data-i18n="nav.catalogue">Rapports</a><a href="tarifs.html" data-i18n="nav.pricing">Tarifs</a><a href="methodologie.html" data-i18n="nav.methodology">Méthodologie</a></div></div>
+        <div><h5 class="footer-heading" data-i18n="footer.resources">Ressources</h5><div class="footer-links"><a href="demande.html" data-i18n="nav.request">Rapport sur mesure</a><a href="contact.html" data-i18n="nav.contact">Contact</a></div></div>
+        <div><h5 class="footer-heading" data-i18n="footer.legal.title">Juridique</h5><div class="footer-links"><a href="mentions-legales.html" data-i18n="footer.legal">Mentions légales</a><a href="cgv.html" data-i18n="footer.cgv">CGV</a><a href="confidentialite.html" data-i18n="footer.privacy">Confidentialité</a></div></div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Meridian Research. <span data-i18n="footer.rights">Tous droits réservés.</span></span>
+        <div class="footer-legal-links"><a href="mentions-legales.html" data-i18n="footer.legal">Mentions légales</a><a href="cgv.html" data-i18n="footer.cgv">CGV</a><a href="confidentialite.html" data-i18n="footer.privacy">Confidentialité</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/data-loader.js"></script>
+  <script src="js/forms.js"></script>
+</body>
+</html>

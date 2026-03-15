@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin — Meridian Research</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+  <!-- ========== LOGIN SCREEN ========== -->
+  <div id="login-screen" class="login-screen">
+    <div class="login-card">
+      <div class="login-logo">
+        <div class="login-logo__icon">M</div>
+        <span>Meridian Research</span>
+      </div>
+      <h2>Panneau d'administration</h2>
+      <form id="login-form">
+        <div class="form-group">
+          <label>Nom d'utilisateur</label>
+          <input type="text" id="login-username" value="admin" required>
+        </div>
+        <div class="form-group">
+          <label>Mot de passe</label>
+          <input type="password" id="login-password" required>
+        </div>
+        <div id="login-error" class="alert alert--error" style="display:none;"></div>
+        <button type="submit" class="btn btn--primary">Connexion</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ========== ADMIN DASHBOARD ========== -->
+  <div id="admin-dashboard" class="admin-layout" style="display:none;">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar__header">
+        <div class="login-logo">
+          <div class="login-logo__icon">M</div>
+          <span>Admin</span>
+        </div>
+      </div>
+      <nav class="sidebar__nav">
+        <button class="sidebar__link active" data-section="reports">
+          <span class="sidebar__icon">📊</span> Rapports
+        </button>
+        <button class="sidebar__link" data-section="settings">
+          <span class="sidebar__icon">⚙️</span> Coordonnées
+        </button>
+        <button class="sidebar__link" data-section="pricing">
+          <span class="sidebar__icon">💰</span> Tarifs
+        </button>
+        <button class="sidebar__link" data-section="password">
+          <span class="sidebar__icon">🔑</span> Mot de passe
+        </button>
+      </nav>
+      <div class="sidebar__footer">
+        <a href="/" class="sidebar__link" target="_blank">
+          <span class="sidebar__icon">🌐</span> Voir le site
+        </a>
+        <button class="sidebar__link sidebar__link--danger" id="logout-btn">
+          <span class="sidebar__icon">🚪</span> Déconnexion
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="admin-main">
+      <!-- ===== REPORTS SECTION ===== -->
+      <section id="section-reports" class="admin-section is-active">
+        <div class="section-header">
+          <div>
+            <h1>Rapports</h1>
+            <p class="section-subtitle">Gérez les rapports publiés dans le catalogue</p>
+          </div>
+          <button class="btn btn--primary" id="btn-add-report">+ Ajouter un rapport</button>
+        </div>
+
+        <!-- Reports List -->
+        <div id="reports-list" class="reports-list"></div>
+
+        <!-- Report Form (add/edit) — hidden by default -->
+        <div id="report-form-container" class="form-container" style="display:none;">
+          <div class="form-container__header">
+            <h2 id="report-form-title">Nouveau rapport</h2>
+            <button class="btn btn--ghost" id="btn-cancel-report">✕ Annuler</button>
+          </div>
+          <form id="report-form">
+            <input type="hidden" id="rf-id">
+
+            <div class="form-row">
+              <div class="form-group">
+                <label>Titre (FR) *</label>
+                <input type="text" id="rf-title" required placeholder="Marché des bornes de recharge en France…">
+              </div>
+              <div class="form-group">
+                <label>Titre (EN)</label>
+                <input type="text" id="rf-titleEn" placeholder="EV Charging Market in France…">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label>Secteur *</label>
+                <select id="rf-sector" required>
+                  <option value="energy">⚡ Énergie & Mobilité</option>
+                  <option value="cyber">🛡️ Cybersécurité</option>
+                  <option value="industry">🏭 Industrie & Supply Chain</option>
+                  <option value="health">🏥 Santé & Consommation régulée</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Prix (€ HT) *</label>
+                <input type="number" id="rf-price" required min="0" step="10" placeholder="890">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label>Date de publication *</label>
+                <input type="month" id="rf-date" required>
+              </div>
+              <div class="form-group">
+                <label>Date affichée (FR)</label>
+                <input type="text" id="rf-dateLabel" placeholder="Mars 2026">
+              </div>
+              <div class="form-group">
+                <label>Date affichée (EN)</label>
+                <input type="text" id="rf-dateLabelEn" placeholder="March 2026">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label>Nombre de pages</label>
+                <input type="number" id="rf-pages" min="1" placeholder="124">
+              </div>
+              <div class="form-group">
+                <label>Format</label>
+                <input type="text" id="rf-format" placeholder="PDF + Excel">
+              </div>
+              <div class="form-group">
+                <label>Nombre de sources</label>
+                <input type="number" id="rf-sources" min="0" placeholder="42">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label>Périmètre géo (FR)</label>
+                <input type="text" id="rf-scope" placeholder="France + benchmark UE">
+              </div>
+              <div class="form-group">
+                <label>Périmètre géo (EN)</label>
+                <input type="text" id="rf-scopeEn" placeholder="France + EU benchmark">
+              </div>
+              <div class="form-group">
+                <label>Langue du rapport</label>
+                <input type="text" id="rf-lang" placeholder="Français" value="Français">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="checkbox-label">
+                <input type="checkbox" id="rf-isNew"> Marquer comme « Nouveau »
+              </label>
+            </div>
+
+            <div class="form-group">
+              <label>Description (FR) *</label>
+              <textarea id="rf-excerpt" required rows="3" placeholder="Analyse complète du marché…"></textarea>
+            </div>
+            <div class="form-group">
+              <label>Description (EN)</label>
+              <textarea id="rf-excerptEn" rows="3" placeholder="Complete analysis of the market…"></textarea>
+            </div>
+
+            <div class="form-group">
+              <label>Sommaire (FR) — un élément par ligne</label>
+              <textarea id="rf-toc" rows="6" placeholder="Résumé exécutif&#10;1. Contexte et cadre réglementaire&#10;2. Taille du marché…"></textarea>
+            </div>
+            <div class="form-group">
+              <label>Sommaire (EN) — un élément par ligne</label>
+              <textarea id="rf-tocEn" rows="6" placeholder="Executive Summary&#10;1. Context and Regulatory Framework&#10;2. Market Size…"></textarea>
+            </div>
+
+            <div class="form-group">
+              <label>Méthodologie (FR)</label>
+              <textarea id="rf-methodology" rows="3" placeholder="Ce rapport s'appuie sur…"></textarea>
+            </div>
+            <div class="form-group">
+              <label>Méthodologie (EN)</label>
+              <textarea id="rf-methodologyEn" rows="3" placeholder="This report builds on…"></textarea>
+            </div>
+
+            <div class="form-group">
+              <label>Chiffres clés (JSON) — optionnel</label>
+              <textarea id="rf-keyFigures" rows="4" placeholder='[{"value":"2,4 Md€","label":"Marché 2026","labelEn":"Market 2026"}]'></textarea>
+              <small>Format : tableau JSON d'objets avec value, label, labelEn</small>
+            </div>
+
+            <div class="form-actions">
+              <button type="button" class="btn btn--ghost" id="btn-cancel-report-2">Annuler</button>
+              <button type="submit" class="btn btn--primary" id="btn-save-report">Enregistrer</button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <!-- ===== SETTINGS SECTION ===== -->
+      <section id="section-settings" class="admin-section">
+        <div class="section-header">
+          <div>
+            <h1>Coordonnées</h1>
+            <p class="section-subtitle">Informations de contact affichées sur le site</p>
+          </div>
+        </div>
+
+        <form id="settings-form" class="form-container">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Nom de l'entreprise</label>
+              <input type="text" id="sf-companyName" placeholder="Meridian Research">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Email</label>
+              <input type="email" id="sf-email" placeholder="contact@meridian-research.com">
+            </div>
+            <div class="form-group">
+              <label>Téléphone</label>
+              <input type="text" id="sf-phone" placeholder="+33 1 XX XX XX XX">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Adresse</label>
+              <input type="text" id="sf-address" placeholder="Paris, France">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Horaires (FR)</label>
+              <input type="text" id="sf-hours" placeholder="Lun – Ven, 9h – 18h (CET)">
+            </div>
+            <div class="form-group">
+              <label>Horaires (EN)</label>
+              <input type="text" id="sf-hoursEn" placeholder="Mon – Fri, 9am – 6pm (CET)">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Description (FR)</label>
+            <textarea id="sf-description" rows="2"></textarea>
+          </div>
+          <div class="form-group">
+            <label>Description (EN)</label>
+            <textarea id="sf-descriptionEn" rows="2"></textarea>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn btn--primary">Sauvegarder</button>
+          </div>
+          <div id="settings-success" class="alert alert--success" style="display:none;">Coordonnées mises à jour ✓</div>
+        </form>
+      </section>
+
+      <!-- ===== PRICING SECTION ===== -->
+      <section id="section-pricing" class="admin-section">
+        <div class="section-header">
+          <div>
+            <h1>Tarifs</h1>
+            <p class="section-subtitle">Modifiez les formules tarifaires affichées</p>
+          </div>
+        </div>
+
+        <form id="pricing-form" class="form-container">
+          <!-- Unit -->
+          <h3 class="form-section-title">📄 Rapport individuel</h3>
+          <div class="form-row">
+            <div class="form-group"><label>Nom (FR)</label><input type="text" id="pf-unit-name"></div>
+            <div class="form-group"><label>Nom (EN)</label><input type="text" id="pf-unit-nameEn"></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label>Prix (€ HT)</label><input type="number" id="pf-unit-price" min="0"></div>
+            <div class="form-group"><label>Période (FR)</label><input type="text" id="pf-unit-period" placeholder="/ rapport"></div>
+            <div class="form-group"><label>Période (EN)</label><input type="text" id="pf-unit-periodEn" placeholder="/ report"></div>
+          </div>
+          <div class="form-group"><label>Description (FR)</label><input type="text" id="pf-unit-desc"></div>
+          <div class="form-group"><label>Description (EN)</label><input type="text" id="pf-unit-descEn"></div>
+          <div class="form-group"><label>Avantages (FR) — un par ligne</label><textarea id="pf-unit-features" rows="3"></textarea></div>
+          <div class="form-group"><label>Avantages (EN) — un par ligne</label><textarea id="pf-unit-featuresEn" rows="3"></textarea></div>
+
+          <hr class="form-divider">
+
+          <!-- Bundle -->
+          <h3 class="form-section-title">📦 Bundle sectoriel</h3>
+          <div class="form-row">
+            <div class="form-group"><label>Nom (FR)</label><input type="text" id="pf-bundle-name"></div>
+            <div class="form-group"><label>Nom (EN)</label><input type="text" id="pf-bundle-nameEn"></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label>Prix (€ HT)</label><input type="number" id="pf-bundle-price" min="0"></div>
+            <div class="form-group"><label>Période (FR)</label><input type="text" id="pf-bundle-period"></div>
+            <div class="form-group"><label>Période (EN)</label><input type="text" id="pf-bundle-periodEn"></div>
+          </div>
+          <div class="form-group"><label>Description (FR)</label><input type="text" id="pf-bundle-desc"></div>
+          <div class="form-group"><label>Description (EN)</label><input type="text" id="pf-bundle-descEn"></div>
+          <div class="form-group"><label>Avantages (FR) — un par ligne</label><textarea id="pf-bundle-features" rows="3"></textarea></div>
+          <div class="form-group"><label>Avantages (EN) — un par ligne</label><textarea id="pf-bundle-featuresEn" rows="3"></textarea></div>
+
+          <hr class="form-divider">
+
+          <!-- Custom -->
+          <h3 class="form-section-title">✏️ Sur mesure</h3>
+          <div class="form-row">
+            <div class="form-group"><label>Nom (FR)</label><input type="text" id="pf-custom-name"></div>
+            <div class="form-group"><label>Nom (EN)</label><input type="text" id="pf-custom-nameEn"></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label>Mention prix (FR)</label><input type="text" id="pf-custom-priceLabel"></div>
+            <div class="form-group"><label>Mention prix (EN)</label><input type="text" id="pf-custom-priceLabelEn"></div>
+          </div>
+          <div class="form-group"><label>Description (FR)</label><input type="text" id="pf-custom-desc"></div>
+          <div class="form-group"><label>Description (EN)</label><input type="text" id="pf-custom-descEn"></div>
+          <div class="form-group"><label>Avantages (FR) — un par ligne</label><textarea id="pf-custom-features" rows="3"></textarea></div>
+          <div class="form-group"><label>Avantages (EN) — un par ligne</label><textarea id="pf-custom-featuresEn" rows="3"></textarea></div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn--primary">Sauvegarder les tarifs</button>
+          </div>
+          <div id="pricing-success" class="alert alert--success" style="display:none;">Tarifs mis à jour ✓</div>
+        </form>
+      </section>
+
+      <!-- ===== PASSWORD SECTION ===== -->
+      <section id="section-password" class="admin-section">
+        <div class="section-header">
+          <div>
+            <h1>Mot de passe</h1>
+            <p class="section-subtitle">Modifiez le mot de passe d'administration</p>
+          </div>
+        </div>
+
+        <form id="password-form" class="form-container" style="max-width: 480px;">
+          <div class="form-group">
+            <label>Mot de passe actuel</label>
+            <input type="password" id="pw-current" required>
+          </div>
+          <div class="form-group">
+            <label>Nouveau mot de passe</label>
+            <input type="password" id="pw-new" required minlength="6">
+          </div>
+          <div class="form-group">
+            <label>Confirmer le nouveau mot de passe</label>
+            <input type="password" id="pw-confirm" required>
+          </div>
+          <div id="password-error" class="alert alert--error" style="display:none;"></div>
+          <div id="password-success" class="alert alert--success" style="display:none;">Mot de passe modifié ✓</div>
+          <div class="form-actions">
+            <button type="submit" class="btn btn--primary">Modifier le mot de passe</button>
+          </div>
+        </form>
+      </section>
+    </main>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catalogue des rapports — Meridian Research</title>
+  <meta name="description" content="Parcourez nos rapports de marché : énergie, cybersécurité, industrie, santé. Analyses stratégiques, données vérifiées, prêtes à l'emploi.">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+  <!-- ========== HEADER ========== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="header-logo">
+        <div class="logo-icon">M</div>
+        <span>Meridian Research</span>
+      </a>
+      <nav class="header-nav" id="main-nav">
+        <a href="index.html" class="nav-link" data-i18n="nav.home">Accueil</a>
+        <a href="catalogue.html" class="nav-link active" data-i18n="nav.catalogue">Rapports</a>
+        <a href="tarifs.html" class="nav-link" data-i18n="nav.pricing">Tarifs</a>
+        <a href="methodologie.html" class="nav-link" data-i18n="nav.methodology">Méthodologie</a>
+        <a href="demande.html" class="nav-link" data-i18n="nav.request">Rapport sur mesure</a>
+        <a href="contact.html" class="nav-link" data-i18n="nav.contact">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <div class="lang-toggle">
+          <button class="lang-btn active" data-lang="fr">FR</button>
+          <button class="lang-btn" data-lang="en">EN</button>
+        </div>
+        <a href="demande.html" class="btn btn--primary btn--sm" data-i18n="cta.request">Rapport sur mesure</a>
+      </div>
+      <button class="mobile-menu-btn" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <!-- ========== PAGE HERO ========== -->
+  <section class="page-hero page-hero--center">
+    <div class="hero-grid-bg"></div>
+    <div class="container">
+      <span class="badge badge--accent" data-i18n="nav.catalogue">Rapports</span>
+      <h1 data-i18n="catalogue.title">Catalogue des rapports</h1>
+      <p data-i18n="catalogue.subtitle">Analyses de marché stratégiques, mises à jour régulièrement et conçues pour l'action.</p>
+    </div>
+  </section>
+
+  <!-- ========== CATALOGUE ========== -->
+  <section class="section section--sm">
+    <div class="container">
+      <!-- Search Bar -->
+      <div class="search-bar">
+        <span class="search-bar__icon">🔍</span>
+        <input type="text" class="search-bar__input" id="catalogue-search" data-i18n="catalogue.search" data-i18n-attr="placeholder" placeholder="Rechercher un rapport, un secteur, un mot-clé…">
+      </div>
+
+      <!-- Filter Chips -->
+      <div class="filter-bar">
+        <button class="filter-chip active" data-filter="all" data-i18n="catalogue.all">Tous</button>
+        <button class="filter-chip" data-filter="energy" data-i18n="home.vertical.energy">Énergie & Mobilité</button>
+        <button class="filter-chip" data-filter="cyber" data-i18n="home.vertical.cyber">Cybersécurité</button>
+        <button class="filter-chip" data-filter="industry" data-i18n="home.vertical.industry">Industrie & Supply Chain</button>
+        <button class="filter-chip" data-filter="health" data-i18n="home.vertical.health">Santé & Consommation régulée</button>
+      </div>
+
+      <!-- Results Header -->
+      <div class="catalogue-results__header">
+        <span class="results-count" id="results-count">6 rapports disponibles</span>
+        <div class="results-sort">
+          <select class="sort-select" id="sort-select">
+            <option value="recent" data-i18n="catalogue.sort.recent">Plus récents</option>
+            <option value="price-asc" data-i18n="catalogue.sort.price.asc">Prix croissant</option>
+            <option value="price-desc" data-i18n="catalogue.sort.price.desc">Prix décroissant</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Reports Grid -->
+      <div class="catalogue-grid" id="catalogue-grid">
+
+        <!-- Report 1 -->
+        <a href="rapport.html" class="report-card" data-sector="energy" data-date="2026-03">
+          <div class="report-card__header">
+            <span class="report-card__sector">⚡ Énergie & Mobilité</span>
+            <span class="badge badge--new">Nouveau</span>
+          </div>
+          <div class="report-card__body">
+            <h3 class="report-card__title">Marché des bornes de recharge en France — 2026-2030</h3>
+            <p class="report-card__excerpt">Analyse complète du marché des infrastructures de recharge pour véhicules électriques en France. Taille du marché, acteurs clés, cadre réglementaire, prévisions CAPEX.</p>
+          </div>
+          <div class="report-card__meta">
+            <span class="report-card__meta-item">📄 124 pages</span>
+            <span class="report-card__meta-item">📅 Mars 2026</span>
+          </div>
+          <div class="report-card__footer">
+            <div>
+              <span class="report-card__price">890€</span>
+              <span class="report-card__price-label"> HT</span>
+            </div>
+            <span class="btn btn--outline btn--sm" data-i18n="cta.preview">Aperçu gratuit</span>
+          </div>
+        </a>
+
+        <!-- Report 2 -->
+        <a href="rapport.html" class="report-card" data-sector="cyber" data-date="2026-02">
+          <div class="report-card__header">
+            <span class="report-card__sector">🛡️ Cybersécurité</span>
+            <span class="badge badge--new">Nouveau</span>
+          </div>
+          <div class="report-card__body">
+            <h3 class="report-card__title">Cybersécurité des ETI françaises — Impact NIS2 et marché des solutions</h3>
+            <p class="report-card__excerpt">Cartographie du marché de la cybersécurité pour les ETI en France. Impact de la directive NIS2, benchmark fournisseurs, budgets moyens par taille d'entreprise.</p>
+          </div>
+          <div class="report-card__meta">
+            <span class="report-card__meta-item">📄 98 pages</span>
+            <span class="report-card__meta-item">📅 Février 2026</span>
+          </div>
+          <div class="report-card__footer">
+            <div>
+              <span class="report-card__price">1 290€</span>
+              <span class="report-card__price-label"> HT</span>
+            </div>
+            <span class="btn btn--outline btn--sm" data-i18n="cta.preview">Aperçu gratuit</span>
+          </div>
+        </a>
+
+        <!-- Report 3 -->
+        <a href="rapport.html" class="report-card" data-sector="industry" data-date="2026-02">
+          <div class="report-card__header">
+            <span class="report-card__sector">🏭 Industrie & Supply Chain</span>
+          </div>
+          <div class="report-card__body">
+            <h3 class="report-card__title">Reshoring industriel en Europe — Opportunités et coûts cachés</h3>
+            <p class="report-card__excerpt">Analyse des dynamiques de relocalisation industrielle en UE. Secteurs concernés, incitatifs publics, surcoûts logistiques, et impact sur les chaînes fournisseurs.</p>
+          </div>
+          <div class="report-card__meta">
+            <span class="report-card__meta-item">📄 86 pages</span>
+            <span class="report-card__meta-item">📅 Février 2026</span>
+          </div>
+          <div class="report-card__footer">
+            <div>
+              <span class="report-card__price">790€</span>
+              <span class="report-card__price-label"> HT</span>
+            </div>
+            <span class="btn btn--outline btn--sm" data-i18n="cta.preview">Aperçu gratuit</span>
+          </div>
+        </a>
+
+        <!-- Report 4 -->
+        <a href="rapport.html" class="report-card" data-sector="health" data-date="2026-01">
+          <div class="report-card__header">
+            <span class="report-card__sector">🏥 Santé & Consommation régulée</span>
+          </div>
+          <div class="report-card__body">
+            <h3 class="report-card__title">Marché des compléments alimentaires en France — Réglementation & distribution</h3>
+            <p class="report-card__excerpt">Taille du marché, segmentation par canal (pharmacie, GMS, e-commerce), évolution réglementaire DGCCRF, et positionnement des marques leaders.</p>
+          </div>
+          <div class="report-card__meta">
+            <span class="report-card__meta-item">📄 110 pages</span>
+            <span class="report-card__meta-item">📅 Janvier 2026</span>
+          </div>
+          <div class="report-card__footer">
+            <div>
+              <span class="report-card__price">690€</span>
+              <span class="report-card__price-label"> HT</span>
+            </div>
+            <span class="btn btn--outline btn--sm" data-i18n="cta.preview">Aperçu gratuit</span>
+          </div>
+        </a>
+
+        <!-- Report 5 -->
+        <a href="rapport.html" class="report-card" data-sector="energy" data-date="2025-12">
+          <div class="report-card__header">
+            <span class="report-card__sector">⚡ Énergie & Mobilité</span>
+          </div>
+          <div class="report-card__body">
+            <h3 class="report-card__title">Hydrogène vert en Europe — Panorama des projets et analyse économique</h3>
+            <p class="report-card__excerpt">Inventaire des projets hydrogène vert dans l'UE, économie de la production, comparaison des stratégies nationales, barrières technologiques et business models viables.</p>
+          </div>
+          <div class="report-card__meta">
+            <span class="report-card__meta-item">📄 142 pages</span>
+            <span class="report-card__meta-item">📅 Décembre 2025</span>
+          </div>
+          <div class="report-card__footer">
+            <div>
+              <span class="report-card__price">1 490€</span>
+              <span class="report-card__price-label"> HT</span>
+            </div>
+            <span class="btn btn--outline btn--sm" data-i18n="cta.preview">Aperçu gratuit</span>
+          </div>
+        </a>
+
+        <!-- Report 6 -->
+        <a href="rapport.html" class="report-card" data-sector="cyber" data-date="2025-11">
+          <div class="report-card__header">
+            <span class="report-card__sector">🛡️ Cybersécurité</span>
+          </div>
+          <div class="report-card__body">
+            <h3 class="report-card__title">Identité numérique en France — Marché, acteurs et cadre eIDAS 2.0</h3>
+            <p class="report-card__excerpt">Analyse du marché de l'identité numérique : wallet européen, certification, acteurs publics et privés, implications pour le KYC et l'onboarding B2B/B2C.</p>
+          </div>
+          <div class="report-card__meta">
+            <span class="report-card__meta-item">📄 92 pages</span>
+            <span class="report-card__meta-item">📅 Novembre 2025</span>
+          </div>
+          <div class="report-card__footer">
+            <div>
+              <span class="report-card__price">990€</span>
+              <span class="report-card__price-label"> HT</span>
+            </div>
+            <span class="btn btn--outline btn--sm" data-i18n="cta.preview">Aperçu gratuit</span>
+          </div>
+        </a>
+
+      </div>
+
+      <!-- No results -->
+      <div class="no-results" id="no-results" style="display:none;">
+        <div class="no-results__icon">📭</div>
+        <p data-i18n="catalogue.no_results">Aucun rapport ne correspond à votre recherche.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CTA BANNER ========== -->
+  <section class="section">
+    <div class="container">
+      <div class="cta-banner animate-on-scroll">
+        <h2 data-i18n="home.cta.title">Un marché vous préoccupe ?</h2>
+        <p data-i18n="home.cta.subtitle">Décrivez votre problématique — nous vous livrons l'analyse qui manquait à votre décision.</p>
+        <div class="hero-cta">
+          <a href="demande.html" class="btn btn--primary btn--lg" data-i18n="cta.request">Rapport sur mesure</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="header-logo"><div class="logo-icon">M</div><span>Meridian Research</span></a>
+          <p data-i18n="footer.brand.desc">Intelligence de marché actionnable pour les décideurs.</p>
+        </div>
+        <div>
+          <h5 class="footer-heading" data-i18n="footer.nav">Navigation</h5>
+          <div class="footer-links">
+            <a href="index.html" data-i18n="nav.home">Accueil</a>
+            <a href="catalogue.html" data-i18n="nav.catalogue">Rapports</a>
+            <a href="tarifs.html" data-i18n="nav.pricing">Tarifs</a>
+            <a href="methodologie.html" data-i18n="nav.methodology">Méthodologie</a>
+          </div>
+        </div>
+        <div>
+          <h5 class="footer-heading" data-i18n="footer.resources">Ressources</h5>
+          <div class="footer-links">
+            <a href="demande.html" data-i18n="nav.request">Rapport sur mesure</a>
+            <a href="contact.html" data-i18n="nav.contact">Contact</a>
+          </div>
+        </div>
+        <div>
+          <h5 class="footer-heading" data-i18n="footer.legal.title">Juridique</h5>
+          <div class="footer-links">
+            <a href="mentions-legales.html" data-i18n="footer.legal">Mentions légales</a>
+            <a href="cgv.html" data-i18n="footer.cgv">CGV</a>
+            <a href="confidentialite.html" data-i18n="footer.privacy">Confidentialité</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Meridian Research. <span data-i18n="footer.rights">Tous droits réservés.</span></span>
+        <div class="footer-legal-links">
+          <a href="mentions-legales.html" data-i18n="footer.legal">Mentions légales</a>
+          <a href="cgv.html" data-i18n="footer.cgv">CGV</a>
+          <a href="confidentialite.html" data-i18n="footer.privacy">Confidentialité</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/data-loader.js"></script>
+  <script src="js/catalogue.js"></script>
+</body>
+</html>

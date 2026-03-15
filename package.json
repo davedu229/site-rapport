@@ -1,0 +1,16 @@
+{
+  "name": "meridian-research",
+  "version": "1.0.0",
+  "description": "Meridian Research — Site de rapports de marché avec panneau d'administration",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "express": "^4.21.0",
+    "express-session": "^1.18.0",
+    "uuid": "^10.0.0"
+  }
+}

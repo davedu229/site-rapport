@@ -1,0 +1,364 @@
+[
+  {
+    "id": "bornes-recharge-france-2026",
+    "title": "Marché des bornes de recharge en France — 2026-2030",
+    "titleEn": "EV Charging Market in France — 2026-2030",
+    "sector": "energy",
+    "sectorLabel": "Énergie & Mobilité",
+    "sectorLabelEn": "Energy & Mobility",
+    "sectorIcon": "⚡",
+    "excerpt": "Analyse complète du marché des infrastructures de recharge pour véhicules électriques en France. Taille du marché, acteurs clés, cadre réglementaire, prévisions CAPEX.",
+    "excerptEn": "Complete analysis of the EV charging infrastructure market in France. Market size, key players, regulatory framework, CAPEX forecasts.",
+    "pages": 124,
+    "date": "2026-03",
+    "dateLabel": "Mars 2026",
+    "dateLabelEn": "March 2026",
+    "price": 990,
+    "isNew": true,
+    "format": "PDF + Excel",
+    "lang": "Français",
+    "langEn": "French",
+    "scope": "France + benchmark UE",
+    "scopeEn": "France + EU benchmark",
+    "sources": 42,
+    "toc": [
+      "Résumé exécutif & recommandations clés",
+      "1. Contexte et cadre réglementaire",
+      "2. Taille du marché et segmentation (2020-2030)",
+      "3. Analyse de la chaîne de valeur",
+      "4. Cartographie des acteurs (opérateurs, fabricants, installateurs)",
+      "5. Modèles économiques et rentabilité",
+      "6. Technologies de recharge : AC, DC, ultra-rapide, V2G",
+      "7. Benchmark européen (Allemagne, Pays-Bas, Norvège)",
+      "8. Prévisions et scénarios 2026-2030",
+      "9. Risques et points de vigilance",
+      "Annexes : méthodologie, glossaire, sources"
+    ],
+    "tocEn": [
+      "Executive Summary & Key Recommendations",
+      "1. Context and Regulatory Framework",
+      "2. Market Size and Segmentation (2020-2030)",
+      "3. Value Chain Analysis",
+      "4. Player Mapping (Operators, Manufacturers, Installers)",
+      "5. Business Models and Profitability",
+      "6. Charging Technologies: AC, DC, Ultra-fast, V2G",
+      "7. European Benchmark (Germany, Netherlands, Norway)",
+      "8. 2026-2030 Forecasts and Scenarios",
+      "9. Risks and Watchpoints",
+      "Appendices: Methodology, Glossary, Sources"
+    ],
+    "keyFigures": [
+      {
+        "value": "2,4 Md€",
+        "label": "Marché 2026 (estimé)",
+        "labelEn": "Market 2026 (est.)"
+      },
+      {
+        "value": "+28%",
+        "label": "TCAC 2024-2030",
+        "labelEn": "CAGR 2024-2030"
+      },
+      {
+        "value": "400k+",
+        "label": "Points de recharge visés (2030)",
+        "labelEn": "Targeted charge points (2030)"
+      }
+    ],
+    "methodology": "Ce rapport s'appuie sur un croisement de données issues de bases de données publiques (AVERE-France, Gireve, data.gouv.fr), d'entretiens avec 12 experts du secteur, de publications sectorielles et réglementaires, et d'une modélisation propriétaire bottom-up.",
+    "methodologyEn": "This report builds on crossed data from public databases (AVERE-France, Gireve, data.gouv.fr), interviews with 12 industry experts, sector and regulatory publications, and proprietary bottom-up modelling."
+  },
+  {
+    "id": "cybersecurite-eti-nis2",
+    "title": "Cybersécurité des ETI françaises — Impact NIS2 et marché des solutions",
+    "titleEn": "Cybersecurity for French Mid-Caps — NIS2 Impact & Solutions Market",
+    "sector": "cyber",
+    "sectorLabel": "Cybersécurité",
+    "sectorLabelEn": "Cybersecurity",
+    "sectorIcon": "🛡️",
+    "excerpt": "Cartographie du marché de la cybersécurité pour les ETI en France. Impact de la directive NIS2, benchmark fournisseurs, budgets moyens par taille d'entreprise.",
+    "excerptEn": "Cybersecurity market mapping for mid-sized companies in France. NIS2 directive impact, vendor benchmark, average budgets by company size.",
+    "pages": 98,
+    "date": "2026-02",
+    "dateLabel": "Février 2026",
+    "dateLabelEn": "February 2026",
+    "price": 1290,
+    "isNew": true,
+    "format": "PDF + Excel",
+    "lang": "Français",
+    "langEn": "French",
+    "scope": "France",
+    "scopeEn": "France",
+    "sources": 35,
+    "toc": [
+      "Résumé exécutif",
+      "1. Paysage de la cybersécurité en France",
+      "2. Directive NIS2 : impacts et obligations",
+      "3. Segmentation du marché par type de solution",
+      "4. Benchmark des fournisseurs",
+      "5. Budgets cybersécurité des ETI",
+      "6. Tendances et menaces émergentes",
+      "7. Recommandations stratégiques",
+      "Annexes"
+    ],
+    "tocEn": [
+      "Executive Summary",
+      "1. Cybersecurity Landscape in France",
+      "2. NIS2 Directive: Impacts and Obligations",
+      "3. Market Segmentation by Solution Type",
+      "4. Vendor Benchmark",
+      "5. Mid-Cap Cybersecurity Budgets",
+      "6. Emerging Trends and Threats",
+      "7. Strategic Recommendations",
+      "Appendices"
+    ],
+    "keyFigures": [
+      {
+        "value": "4,2 Md€",
+        "label": "Marché cybersécurité France 2026",
+        "labelEn": "France cybersecurity market 2026"
+      },
+      {
+        "value": "+12%",
+        "label": "Croissance annuelle",
+        "labelEn": "Annual growth"
+      },
+      {
+        "value": "15 000",
+        "label": "ETI concernées par NIS2",
+        "labelEn": "Mid-caps affected by NIS2"
+      }
+    ],
+    "methodology": "Analyse croisée de données publiques, d'entretiens avec des RSSI et des éditeurs de solutions, et de modélisation marché.",
+    "methodologyEn": "Cross-analysis of public data, CISO and vendor interviews, and market modelling."
+  },
+  {
+    "id": "reshoring-industriel-europe",
+    "title": "Reshoring industriel en Europe — Opportunités et coûts cachés",
+    "titleEn": "Industrial Reshoring in Europe — Opportunities & Hidden Costs",
+    "sector": "industry",
+    "sectorLabel": "Industrie & Supply Chain",
+    "sectorLabelEn": "Industry & Supply Chain",
+    "sectorIcon": "🏭",
+    "excerpt": "Analyse des dynamiques de relocalisation industrielle en UE. Secteurs concernés, incitatifs publics, surcoûts logistiques, et impact sur les chaînes fournisseurs.",
+    "excerptEn": "Analysis of industrial reshoring dynamics in the EU. Affected sectors, public incentives, logistics overcosts, and supply chain impact.",
+    "pages": 86,
+    "date": "2026-02",
+    "dateLabel": "Février 2026",
+    "dateLabelEn": "February 2026",
+    "price": 790,
+    "isNew": false,
+    "format": "PDF + Excel",
+    "lang": "Français",
+    "langEn": "French",
+    "scope": "Union Européenne",
+    "scopeEn": "European Union",
+    "sources": 28,
+    "toc": [
+      "Résumé exécutif",
+      "1. Le reshoring : définition et contexte",
+      "2. Secteurs industriels concernés",
+      "3. Incitatifs publics et cadre réglementaire",
+      "4. Analyse des coûts (main-d'œuvre, logistique, énergie)",
+      "5. Études de cas",
+      "6. Prévisions 2026-2030",
+      "Annexes"
+    ],
+    "tocEn": [
+      "Executive Summary",
+      "1. Reshoring: Definition and Context",
+      "2. Industrial Sectors Affected",
+      "3. Public Incentives and Regulatory Framework",
+      "4. Cost Analysis (Labor, Logistics, Energy)",
+      "5. Case Studies",
+      "6. 2026-2030 Forecasts",
+      "Appendices"
+    ],
+    "keyFigures": [
+      {
+        "value": "23%",
+        "label": "ETI envisageant le reshoring",
+        "labelEn": "Mid-caps considering reshoring"
+      },
+      {
+        "value": "+15-40%",
+        "label": "Surcoût moyen vs. offshore",
+        "labelEn": "Average premium vs. offshore"
+      }
+    ],
+    "methodology": "Entretiens avec des directeurs industriels, données Eurostat et publications de la Commission européenne.",
+    "methodologyEn": "Interviews with industrial directors, Eurostat data and European Commission publications."
+  },
+  {
+    "id": "complements-alimentaires-france",
+    "title": "Marché des compléments alimentaires en France — Réglementation & distribution",
+    "titleEn": "Dietary Supplements Market in France — Regulation & Distribution",
+    "sector": "health",
+    "sectorLabel": "Santé & Consommation régulée",
+    "sectorLabelEn": "Health & Regulated Consumer",
+    "sectorIcon": "🏥",
+    "excerpt": "Taille du marché, segmentation par canal (pharmacie, GMS, e-commerce), évolution réglementaire DGCCRF, et positionnement des marques leaders.",
+    "excerptEn": "Market size, channel segmentation (pharmacy, retail, e-commerce), DGCCRF regulatory evolution, and leader brand positioning.",
+    "pages": 110,
+    "date": "2026-01",
+    "dateLabel": "Janvier 2026",
+    "dateLabelEn": "January 2026",
+    "price": 690,
+    "isNew": false,
+    "format": "PDF + Excel",
+    "lang": "Français",
+    "langEn": "French",
+    "scope": "France",
+    "scopeEn": "France",
+    "sources": 31,
+    "toc": [
+      "Résumé exécutif",
+      "1. Panorama du marché français",
+      "2. Segmentation par canal de distribution",
+      "3. Cadre réglementaire (DGCCRF, EFSA)",
+      "4. Cartographie des marques leaders",
+      "5. Tendances consommateur",
+      "6. Prévisions 2026-2030",
+      "Annexes"
+    ],
+    "tocEn": [
+      "Executive Summary",
+      "1. French Market Overview",
+      "2. Distribution Channel Segmentation",
+      "3. Regulatory Framework (DGCCRF, EFSA)",
+      "4. Leading Brand Mapping",
+      "5. Consumer Trends",
+      "6. 2026-2030 Forecasts",
+      "Appendices"
+    ],
+    "keyFigures": [
+      {
+        "value": "2,6 Md€",
+        "label": "Marché France 2025",
+        "labelEn": "France market 2025"
+      },
+      {
+        "value": "+7%",
+        "label": "Croissance annuelle",
+        "labelEn": "Annual growth"
+      }
+    ],
+    "methodology": "Données Synadiet, DGCCRF, panels distributeurs, et entretiens avec des acteurs du marché.",
+    "methodologyEn": "Synadiet data, DGCCRF, distributor panels, and market player interviews."
+  },
+  {
+    "id": "hydrogene-vert-europe",
+    "title": "Hydrogène vert en Europe — Panorama des projets et analyse économique",
+    "titleEn": "Green Hydrogen in Europe — Project Overview & Economic Analysis",
+    "sector": "energy",
+    "sectorLabel": "Énergie & Mobilité",
+    "sectorLabelEn": "Energy & Mobility",
+    "sectorIcon": "⚡",
+    "excerpt": "Inventaire des projets hydrogène vert dans l'UE, économie de la production, comparaison des stratégies nationales, barrières technologiques et business models viables.",
+    "excerptEn": "Green hydrogen project inventory in the EU, production economics, national strategy comparison, technology barriers and viable business models.",
+    "pages": 142,
+    "date": "2025-12",
+    "dateLabel": "Décembre 2025",
+    "dateLabelEn": "December 2025",
+    "price": 1490,
+    "isNew": false,
+    "format": "PDF + Excel",
+    "lang": "Français",
+    "langEn": "French",
+    "scope": "Union Européenne",
+    "scopeEn": "European Union",
+    "sources": 55,
+    "toc": [
+      "Résumé exécutif",
+      "1. L'hydrogène vert : définition et enjeux",
+      "2. Inventaire des projets en UE",
+      "3. Économie de la production",
+      "4. Stratégies nationales comparées",
+      "5. Barrières technologiques",
+      "6. Business models viables",
+      "7. Prévisions et scénarios",
+      "Annexes"
+    ],
+    "tocEn": [
+      "Executive Summary",
+      "1. Green Hydrogen: Definition and Stakes",
+      "2. EU Project Inventory",
+      "3. Production Economics",
+      "4. Compared National Strategies",
+      "5. Technology Barriers",
+      "6. Viable Business Models",
+      "7. Forecasts and Scenarios",
+      "Appendices"
+    ],
+    "keyFigures": [
+      {
+        "value": "52 Md€",
+        "label": "Investissements annoncés en UE",
+        "labelEn": "Announced EU investments"
+      },
+      {
+        "value": "6-8 €/kg",
+        "label": "Coût de production actuel",
+        "labelEn": "Current production cost"
+      }
+    ],
+    "methodology": "Inventaire de projets (Clean Hydrogen JU, IPCEI), données IEA/IRENA, entretiens avec des développeurs de projets.",
+    "methodologyEn": "Project inventory (Clean Hydrogen JU, IPCEI), IEA/IRENA data, interviews with project developers."
+  },
+  {
+    "id": "identite-numerique-france-eidas",
+    "title": "Identité numérique en France — Marché, acteurs et cadre eIDAS 2.0",
+    "titleEn": "Digital Identity in France — Market, Players & eIDAS 2.0 Framework",
+    "sector": "cyber",
+    "sectorLabel": "Cybersécurité",
+    "sectorLabelEn": "Cybersecurity",
+    "sectorIcon": "🛡️",
+    "excerpt": "Analyse du marché de l'identité numérique : wallet européen, certification, acteurs publics et privés, implications pour le KYC et l'onboarding B2B/B2C.",
+    "excerptEn": "Digital identity market analysis: European wallet, certification, public and private players, implications for KYC and B2B/B2C onboarding.",
+    "pages": 92,
+    "date": "2025-11",
+    "dateLabel": "Novembre 2025",
+    "dateLabelEn": "November 2025",
+    "price": 990,
+    "isNew": false,
+    "format": "PDF + Excel",
+    "lang": "Français",
+    "langEn": "French",
+    "scope": "France + UE",
+    "scopeEn": "France + EU",
+    "sources": 38,
+    "toc": [
+      "Résumé exécutif",
+      "1. L'identité numérique : enjeux et définitions",
+      "2. Le cadre eIDAS 2.0",
+      "3. Le wallet européen d'identité",
+      "4. Acteurs publics et privés",
+      "5. Implications pour le KYC/onboarding",
+      "6. Prévisions de marché",
+      "Annexes"
+    ],
+    "tocEn": [
+      "Executive Summary",
+      "1. Digital Identity: Stakes and Definitions",
+      "2. The eIDAS 2.0 Framework",
+      "3. The European Identity Wallet",
+      "4. Public and Private Players",
+      "5. KYC/Onboarding Implications",
+      "6. Market Forecasts",
+      "Appendices"
+    ],
+    "keyFigures": [
+      {
+        "value": "1,8 Md€",
+        "label": "Marché identité numérique UE 2026",
+        "labelEn": "EU digital identity market 2026"
+      },
+      {
+        "value": "450M",
+        "label": "Utilisateurs wallet visés (2030)",
+        "labelEn": "Targeted wallet users (2030)"
+      }
+    ],
+    "methodology": "Analyse du cadre réglementaire, entretiens avec des acteurs de la certification et du KYC, données Commission européenne.",
+    "methodologyEn": "Regulatory framework analysis, certification and KYC player interviews, European Commission data."
+  }
+]
