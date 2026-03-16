@@ -428,6 +428,12 @@
 @media (max-width: 768px) {
   .methodology-grid {
     grid-template-columns: 1fr;
+    gap: var(--space-5);
+  }
+
+  /* Override inline grid-column: span 2 on step 5 */
+  .methodology-grid .card {
+    grid-column: auto !important;
   }
 }
 
