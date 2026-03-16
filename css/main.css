@@ -709,6 +709,10 @@ p {
     padding: var(--space-16) 0;
   }
 
+  .section--sm {
+    padding: var(--space-10) 0;
+  }
+
   .grid-2,
   .grid-3,
   .grid-4 {
@@ -717,6 +721,10 @@ p {
 
   h1 {
     font-size: var(--fs-4xl);
+  }
+
+  .section-header {
+    margin-bottom: var(--space-10);
   }
 }
 

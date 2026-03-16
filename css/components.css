@@ -833,6 +833,17 @@
   z-index: 1;
 }
 
+@media (max-width: 768px) {
+  .cta-banner {
+    padding: var(--space-10) var(--space-6);
+    border-radius: var(--radius-xl);
+  }
+
+  .cta-banner p {
+    font-size: var(--fs-base);
+  }
+}
+
 /* ============================================================
    FAQ ACCORDION
    ============================================================ */
@@ -912,6 +923,17 @@
 .page-hero--center p {
   margin-left: auto;
   margin-right: auto;
+}
+
+@media (max-width: 768px) {
+  .page-hero {
+    padding-top: 100px;
+    padding-bottom: var(--space-10);
+  }
+
+  .page-hero p {
+    font-size: var(--fs-base);
+  }
 }
 
 /* ============================================================
