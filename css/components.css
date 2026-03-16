@@ -160,16 +160,14 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(255, 255, 255, 0.98);
-    backdrop-filter: blur(30px);
-    -webkit-backdrop-filter: blur(30px);
+    background: #ffffff;
     flex-direction: column;
     justify-content: center;
     gap: var(--space-4);
     opacity: 0;
     visibility: hidden;
-    transition: all var(--duration-normal) var(--ease-out);
-    z-index: var(--z-overlay);
+    transition: opacity var(--duration-normal) var(--ease-out), visibility var(--duration-normal) var(--ease-out);
+    z-index: 9999;
   }
 
   .header-nav.is-open {
